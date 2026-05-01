@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "artifacts": [
+    {
+      "artifact_name": "default_rules",
+      "version": "0.1.0",
+      "producer_workstream": "rules_templates",
+      "created_at_utc": "2026-04-28T00:00:00Z",
+      "input_hashes": {},
+      "path": "data/material_rules/default.yaml"
+    },
+    {
+      "artifact_name": "basic_bracket_params",
+      "version": "0.1.0",
+      "producer_workstream": "rules_templates",
+      "created_at_utc": "2026-04-28T00:00:00Z",
+      "input_hashes": {},
+      "path": "templates/params/basic_bracket.csv"
+    }
+  ]
+}

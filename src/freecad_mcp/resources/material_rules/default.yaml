@@ -1,0 +1,13 @@
+numeric_thresholds:
+  - rule_id: min_wall_thickness
+    parameter: p_wall_thickness_mm
+    min: 1.2
+    severity: warn
+    message: Wall thickness is below the default FDM manufacturability threshold.
+    recommended_fix: Increase p_wall_thickness_mm to at least 1.2 mm or select a process-specific rule pack.
+  - rule_id: min_clearance
+    parameter: m_clearance_fit_mm
+    min: 0.2
+    severity: warn
+    message: Clearance fit is below the default assembly clearance threshold.
+    recommended_fix: Increase m_clearance_fit_mm to at least 0.2 mm.

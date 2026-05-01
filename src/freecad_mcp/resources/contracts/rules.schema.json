@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://freecad-mcp.local/contracts/rules.schema.json",
+  "title": "FreeCAD MCP Rule Result",
+  "type": "object",
+  "required": ["rule_id", "severity", "entity_ref", "message"],
+  "additionalProperties": false,
+  "properties": {
+    "rule_id": { "type": "string", "minLength": 1 },
+    "severity": {
+      "type": "string",
+      "enum": ["info", "warn", "error"]
+    },
+    "entity_ref": { "type": "string", "minLength": 1 },
+    "message": { "type": "string", "minLength": 1 },
+    "recommended_fix": { "type": "string" }
+  }
+}

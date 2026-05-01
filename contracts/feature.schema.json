@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://freecad-mcp.local/contracts/feature.schema.json",
+  "title": "FreeCAD MCP Feature Command",
+  "type": "object",
+  "required": ["feature_id", "feature_type", "references", "parameters", "rollback_on_fail"],
+  "additionalProperties": false,
+  "properties": {
+    "feature_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "feature_type": {
+      "type": "string",
+      "enum": ["pad", "pocket", "fillet", "chamfer", "pattern"]
+    },
+    "references": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^Spreadsheet\\.[A-Za-z_][A-Za-z0-9_]*$"
+      }
+    },
+    "rollback_on_fail": {
+      "type": "boolean"
+    }
+  }
+}

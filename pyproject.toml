@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "freecad-mcp"
+version = "0.1.0"
+description = "MCP integration and FreeCAD Workbench scaffold for parametric CAD workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "FreeCAD-MCP contributors" }]
+dependencies = [
+  "mcp==1.27.0",
+  "jsonschema>=4.23",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pytest>=8.0",
+]
+
+[project.scripts]
+freecad-mcp = "freecad_mcp.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+markers = [
+  "freecad: requires a local FreeCAD or FreeCADCmd installation",
+  "mock: mock-mode tests that do not require FreeCAD",
+  "workbench: FreeCAD Workbench shell tests",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/freecad_mcp"]
+
+[tool.hatch.build]
+include = [
+  "src/freecad_mcp/**",
+  "package.xml",
+  "Init.py",
+  "InitGui.py",
+  "freecad_mcp_icon.svg",
+  "README.md",
+  "LICENSE",
+]

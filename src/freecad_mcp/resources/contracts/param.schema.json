@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://freecad-mcp.local/contracts/param.schema.json",
+  "title": "FreeCAD MCP Parameter",
+  "type": "object",
+  "required": ["name", "unit", "value", "description", "category", "source"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^(g|p|m)_[a-z0-9]+(_[a-z0-9]+)*$"
+    },
+    "unit": {
+      "type": "string",
+      "enum": ["mm", "deg", "count", "string", "bool"]
+    },
+    "value": {
+      "oneOf": [
+        { "type": "number" },
+        { "type": "string" },
+        { "type": "boolean" }
+      ]
+    },
+    "min": {
+      "type": ["number", "null"]
+    },
+    "max": {
+      "type": ["number", "null"]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "enum": ["template", "user", "rule_engine"]
+    }
+  }
+}

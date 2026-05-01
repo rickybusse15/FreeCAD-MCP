@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://freecad-mcp.local/contracts/mcp_tools.schema.json",
+  "title": "FreeCAD MCP Tool Catalog",
+  "type": "object",
+  "required": ["version", "tools"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description", "input_schema"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "project.create",
+              "project.open",
+              "project.save",
+              "project.export",
+              "param.list",
+              "param.set",
+              "param.batch_set",
+              "param.validate",
+              "part.create_from_template",
+              "assembly.create",
+              "assembly.add_part",
+              "assembly.insert_link",
+              "assembly.ground",
+              "assembly.mate",
+              "assembly.joint.create",
+              "assembly.joint.update",
+              "assembly.joint.delete",
+              "assembly.joint.list",
+              "assembly.solve",
+              "assembly.bom",
+              "assembly.explode_view",
+              "design.check_rules",
+              "assistant.plan",
+              "assistant.execute",
+              "runtime.status"
+            ]
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_schema": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

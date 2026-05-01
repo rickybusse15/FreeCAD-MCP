@@ -1,0 +1,8 @@
+{
+  "doc_id": "sample",
+  "recompute_success": true,
+  "duration_ms": 0,
+  "topology_changes": [],
+  "constraint_status": "mocked",
+  "errors": []
+}

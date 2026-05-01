@@ -1,0 +1,16 @@
+{
+  "project_name": "demo_bracket",
+  "workspace": "workspace",
+  "parameters": [
+    {
+      "name": "p_base_len_mm",
+      "unit": "mm",
+      "value": 120,
+      "min": 20,
+      "max": 400,
+      "description": "Overall bracket base length",
+      "category": "geometry",
+      "source": "template"
+    }
+  ]
+}

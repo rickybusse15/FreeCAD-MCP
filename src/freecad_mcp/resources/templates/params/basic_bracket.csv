@@ -1,0 +1,5 @@
+Name,Expression,Unit,Value,Min,Max,Description,Category
+p_base_len_mm,120,mm,120,20,400,Overall bracket base length,geometry
+p_base_w_mm,40,mm,40,10,200,Overall bracket base width,geometry
+p_wall_thickness_mm,3,mm,3,1.2,20,Nominal wall thickness,geometry
+m_clearance_fit_mm,0.3,mm,0.3,0.2,5,Default assembly clearance,manufacturing
